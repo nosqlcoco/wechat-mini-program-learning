@@ -11,7 +11,7 @@
 
 》》》应用生命周期
 
-![enter description here][1 =300*300]
+![enter description here][1]
 
 1. 用户首次打开小程序，触发 onLaunch（全局只触发一次）。
 * 小程序初始化完成后，触发onShow方法，监听小程序显示。
