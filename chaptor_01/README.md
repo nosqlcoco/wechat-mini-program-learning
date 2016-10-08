@@ -42,7 +42,9 @@
 * 当小程序进入到后台，先执行页面onHide方法再执行应用onHide方法。
 * 当小程序从后台进入到前台，先执行应用onShow方法再执行页面onShow方法。
 
+下图是小程序从注册到页面加入，前后台切换流程。
 ![enter description here][4]
+
 
 
   [1]: ./images/1%E5%BA%94%E7%94%A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png "1应用生命周期.png"
