@@ -1,11 +1,5 @@
 <!--index.wxml-->
 <view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-  <button type="primary" size="default" bindtouchstart="mytouchstart" ontouchmove="mytouchmove" ontouchcancel="mytouchcacel" ontouchend="mytouchend">我是按钮</button>
+  <button id="myid" data-info-one="extra info" type="primary" size="default" bindtap="mytap" onlongtap="mylongtap" bindtouchstart="mytouchstart" bindtouchmove="mytouchmove" bindtouchcancel="mytouchcacel" bindtouchend="mytouchend">点我吧</button>
+
 </view>
