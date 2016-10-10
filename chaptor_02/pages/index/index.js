@@ -25,13 +25,13 @@ Page({
       })
     })
   },
-  //判断单击还是双击
+  ////触摸事件，判断单击还是双击
   mytap: function(e){
     var curTime = e.timeStamp;
     var lastTime = this.data.lastTapDiffTime;
     if(lastTime > 0){
-      //如果两次单击间隔小于700毫秒，认为是双击
-      if(curTime - lastTime < 700){
+      //如果两次单击间隔小于300毫秒，认为是双击
+      if(curTime - lastTime < 300){
         console.log(e.timeStamp + '- db tap')
       }else{
         console.log(e.timeStamp + '- tap')

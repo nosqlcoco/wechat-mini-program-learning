@@ -33,16 +33,15 @@ bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以�
 单击事件由touchstart、touchend组成,touchend后出发tap事件。
 ![](./images/click.gif)
 
-```
+```html
 <view>
-  <button type="primary" bindtap="mytap" bindtouchstart="mytouchstart" bindtouchend="mytouchend">点我吧</button>
+  <button type="primary" bindtouchstart="mytouchstart" bindtouchend="mytouchend" bindtap="mytap">点我吧</button>
 </view>
 ```
 
 ```javascript
 mytouchstart: function(e){
     console.log(e.timeStamp + '- touch start')
-    this.setData({startPoint: [e.touches[0].pageX, e.touches[0].pageY]});
 },
 mytouchend: function(e){
     console.log(e.timeStamp + '- touch end')
@@ -50,4 +49,42 @@ mytouchend: function(e){
 mytap: function(e){
     console.log(e.timeStamp + '- tap')
 }
+```
+
+#### 双击
+双击事件由两个单击事件组成，两次间隔时间小于300ms认为是双击；微信官方文档没有双击事件，需要开发者自己定义处理。
+![](./images/dbclick.gif)
+
+```html
+<view>
+  <button type="primary" bindtap="mytap">点我吧</button>
+</view>
+```
+
+```javascript
+Page({
+  data: {
+    //上一次触摸距离页面打开时间毫秒数，默认为为0
+    lastTapDiffTime: 0
+  },
+  //触摸事件，判断单击还是双击
+  mytap: function(e){
+    //触摸时间距离页面打开时间毫秒数
+    var curTime = e.timeStamp;
+    //上一次触摸距离页面打开时间毫秒数
+    var lastTime = this.data.lastTapDiffTime;
+    if(lastTime > 0){
+      //如果两次单击间隔小于300毫秒，认为是双击
+      if(curTime - lastTime < 300){
+        console.log(e.timeStamp + '- db tap')
+      }else{
+        console.log(e.timeStamp + '- tap')
+      }
+    }else{
+      console.log(e.timeStamp + '- first tap')
+    }
+    //将本次点击触摸时间设置为上一次触摸时间
+    this.setData({lastTapDiffTime: curTime});
+  }
+})
 ```
