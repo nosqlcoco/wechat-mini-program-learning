@@ -31,6 +31,7 @@ bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以�
 
 #### 单击
 单击事件由touchstart、touchend组成,touchend后出发tap事件。
+
 ![](./images/click.gif)
 
 ```html
@@ -53,6 +54,7 @@ mytap: function(e){
 
 #### 双击
 双击事件由两个单击事件组成，两次间隔时间小于300ms认为是双击；微信官方文档没有双击事件，需要开发者自己定义处理。
+
 ![](./images/dbclick.gif)
 
 ```html
@@ -88,3 +90,50 @@ Page({
   }
 })
 ```
+
+#### 长按
+长按事件手指触摸后，超过350ms再离开。
+
+![](./images/longtap.gif)
+
+```html
+<view>
+  <button type="primary" bindtouchstart="mytouchstart" bindlongtap="mylongtap" bindtouchend="mytouchend" bindtap="mytap">点我吧</button>
+</view>
+```
+
+```javascript
+mytouchstart: function(e){
+    console.log(e.timeStamp + '- touch start')
+},
+//长按事件
+mylongtap: function(e){
+    console.log(e.timeStamp + '- long tap')
+  },
+mytouchend: function(e){
+    console.log(e.timeStamp + '- touch end')
+},
+mytap: function(e){
+    console.log(e.timeStamp + '- tap')
+}
+```
+
+单击、双击、长按属于点触事件，会出发touchstart、touchend、tap事件，touchcancel事件只能在真机模拟，不多说了。
+<table>
+    <tr>
+        <th>事件</th>
+        <th>触发顺序</th>
+    </tr>
+    <tr>
+      <td>单击</td>  
+      <td>touchstart → touchend → tap</td>
+    </tr>
+    <tr>
+      <td>双击</td>  
+      <td>touchstart → touchend → tap → touchstart → touchend → dbtap</td>
+    </tr>
+    <tr>
+      <td>长按</td>  
+      <td>touchstart → longtap → touchend → tap</td>
+    </tr>
+</table>
