@@ -141,4 +141,69 @@ mytap: function(e){
 
 #### 滑动
 
-手指触摸后移动
+手指触摸屏幕并移动，为了简化起见，下面以水平滑动和垂直滑动为例。
+
+![](./shoushi.gif)
+
+坐标图：
+![](./images/coor.png)
+
+1. 以屏幕左上角为原点建立直角坐标系。第四象限为手机屏幕，Y轴越往下坐标值越大（注意跟数学象限的区别）。
+2. 假设A点为touchstart事件触摸点，坐标为A(ax,ay)，然后手指向上滑动到点B(bx,by)，就满足条件by < ay;
+3. 同理，向右滑动到C(cx,cy),满足cx > ax；向下滑动到D(dx,dy),满足dy > ay；向左移动到E(ex，ey)满足ex < ax.
+4. 计算线段AB在Y轴上投影长度为m,在X轴上的投影长度为n
+5. 计算r = m/n,如果r > 1,视为向上滑动。
+6. 同理计算线段AC,AD,AE在Y轴投影长度与X轴的投影长度之比，得出向右向下向左的滑动。
+
+以上没考虑r为1的情况。
+
+```html
+<view>
+  <button type="primary"  bindtouchstart="mytouchstart" bindtouchmove="mytouchmove">点我吧</button>
+</view>
+```
+
+```javascript
+Page({
+  data: {
+    //初始化touchstart坐标
+    startPoint: [0,0]
+  },
+  mytouchstart: function(e){
+    //开始触摸，获取触摸点坐标并放入数组中
+    this.setData({startPoint: [e.touches[0].pageX, e.touches[0].pageY]});
+  },
+  //触摸点移动
+  mytouchmove: function(e){
+    //当前触摸点坐标
+    var curPoint = [e.touches[0].pageX,e.touches[0].pageY];
+    var startPoint = this.data.startPoint;
+    //比较pageX值
+    if(curPoint[0] <= startPoint[0]){
+      if(Math.abs(curPoint[0] - startPoint[0]) >= Math.abs(curPoint[1] - startPoint[1])){
+        console.log(e.timeStamp + '- touch left move')
+      }else{
+        if(curPoint[1] >= startPoint[1]){
+          console.log(e.timeStamp + '- touch down move')
+        }else{
+          console.log(e.timeStamp + '- touch up move')
+        }
+      }
+    }else{
+      if(Math.abs(curPoint[0] - startPoint[0]) >= Math.abs(curPoint[1] - startPoint[1])){
+        console.log(e.timeStamp + '- touch right move')
+      }else{
+        if(curPoint[1] >= startPoint[1]){
+          console.log(e.timeStamp + '- touch down move')
+        }else{
+          console.log(e.timeStamp + '- touch up move')
+        }
+      }
+    }
+  }
+})
+```
+
+#### 多点触控
+
+由于模拟器尚不支持多点触控，内测开放后，继续补充。

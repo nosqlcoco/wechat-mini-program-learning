@@ -6,8 +6,7 @@ Page({
     btnWidth: 200,
     touchLog:"",
     lastTapDiffTime: 0,
-    startPoint: [0,0],
-    endPoint: [0,0]
+    startPoint: [0,0]
   },
   //事件处理函数
   bindViewTap: function() {
