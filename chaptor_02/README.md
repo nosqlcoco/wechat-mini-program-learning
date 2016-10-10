@@ -142,6 +142,7 @@ mytap: function(e){
 #### 4.滑动
 
 手指触摸屏幕并移动，为了简化起见，下面以水平滑动和垂直滑动为例。
+滑动事件由touchstart、touchmove、touchend组成
 
 ![](./images/shoushi.gif)
 
