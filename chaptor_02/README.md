@@ -30,7 +30,7 @@ bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以�
 - 多点触控
 
 #### 1.单击
-单击事件由touchstart、touchend组成,touchend后出发tap事件。
+单击事件由touchstart、touchend组成,touchend后触发tap事件。
 
 ![](./images/click.gif)
 
@@ -119,7 +119,7 @@ mytap: function(e){
 }
 ```
 
-单击、双击、长按属于点触事件，会出发touchstart、touchend、tap事件，touchcancel事件只能在真机模拟，不多说了。
+单击、双击、长按属于点触事件，会触发touchstart、touchend、tap事件，touchcancel事件只能在真机模拟，不多说了。
 <table>
     <tr>
         <th>事件</th>
@@ -142,7 +142,7 @@ mytap: function(e){
 #### 4.滑动
 
 手指触摸屏幕并移动，为了简化起见，下面以水平滑动和垂直滑动为例。
-滑动事件由touchstart、touchmove、touchend组成
+滑动事件由touchstart、touchmove、touchend组成。
 
 ![](./images/shoushi.gif)
 
