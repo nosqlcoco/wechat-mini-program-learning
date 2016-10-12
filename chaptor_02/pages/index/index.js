@@ -90,5 +90,8 @@ Page({
   mytouchend: function(e){
     console.log(e.timeStamp + '- touch end')
     
+  },
+  onPullDownRefresh: function(e){
+    console.log('onPullDownRefresh')
   }
 })
