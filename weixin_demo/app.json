@@ -1,0 +1,20 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/component/labels/labels",
+    "pages/component/map/map",
+    "pages/component/button/buttons",
+    "pages/component/flex/myflex",
+    "pages/component/uploadfile/uploadfile",
+    "pages/component/myrequest/myreq"
+  ],
+  "window":{
+    "backgroundColor": "red",
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#585858",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
+  }
+}

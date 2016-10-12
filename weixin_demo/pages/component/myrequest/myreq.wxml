@@ -1,0 +1,5 @@
+<view class="container">
+    <loading hidden="{{loadingHidden}}" bindchange="loadingChange">{{loadingText}}</loading>
+    <toast hidden="{{toastHidden}}" bindchange="toast1Change">获取成功</toast>
+    <button size="mini" type="primary" bindtap="getServerData">下拉请求数据</button>
+</view>
