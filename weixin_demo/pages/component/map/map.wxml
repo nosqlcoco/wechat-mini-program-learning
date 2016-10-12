@@ -1,0 +1,3 @@
+<view class="container">
+    <map  markers="{{markers}}" style="width: 375px; height: 200px;"></map>
+</view>

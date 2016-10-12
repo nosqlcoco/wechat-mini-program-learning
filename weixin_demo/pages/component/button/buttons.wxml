@@ -1,0 +1,12 @@
+<view class="container bg_green">
+    <button class="weui-btn weui-btn_plain-primary">常规按钮</button>
+    <button type="default">常规按钮</button>
+    <button type="primary">高亮按钮</button>
+    <button type="primary" plain="{{btnPlain}}">镂空按钮</button>
+    <button disabled="{{disabled}}">禁用按钮</button>
+    <button type="warn">警告按钮</button>
+    <button type="primary" loading="{{loading}}">加载按钮</button>
+    <button type="primary" hover-class="btn_hover">按钮点击样式</button>
+    <button type="primary" bindtap="clickMe">按钮单击事件</button>
+    <toast hidden="{{toastHidden}}" bindchange="toastChange">Thanks Click</toast>
+</view>

@@ -1,0 +1,7 @@
+<!--弹性盒子模型参考：http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool-->
+<view class="container mycontainer">
+    <view class="bc_green">1</view>
+    <view class="c2 ">2</view>
+    <view class="c3">3</view>
+</view>
+

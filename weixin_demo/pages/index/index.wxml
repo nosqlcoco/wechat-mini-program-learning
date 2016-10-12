@@ -1,0 +1,23 @@
+<view class="nav-block wrap">
+    <block> 
+      <view class="wrap-item">
+        <button type="{{btnType}}" size="{{btnSize}}" plain="{{btnPlain}}" bindtap="openFlexPage">容器布局</button>
+        <button type="{{btnType}}" size="{{btnSize}}" plain="{{btnPlain}}" bindtap="openBtnPage">按钮</button>
+        <button type="{{btnType}}" size="{{btnSize}}" plain="{{btnPlain}}">复选框</button>
+        <button type="{{btnType}}" size="{{btnSize}}" plain="{{btnPlain}}">表单</button>
+        <button type="{{btnType}}" size="{{btnSize}}" plain="{{btnPlain}}">输入框</button>
+        <button type="{{btnType}}" size="{{btnSize}}" plain="{{btnPlain}}">标签</button>
+        <button type="{{btnType}}" size="{{btnSize}}" plain="{{btnPlain}}">日期选择</button>
+        <button type="{{btnType}}" size="{{btnSize}}" plain="{{btnPlain}}" bindtap="redirectToPage">开关</button>
+        <button type="{{btnType}}" size="{{btnSize}}" plain="{{btnPlain}}">进度条</button>
+        <button type="{{btnType}}" size="{{btnSize}}" plain="{{btnPlain}}" bindtap="toLabelPage">页面跳转</button>
+        <loading hidden="{{loadingHidden}}" bindchange="loadingChange">{{loadingText}}</loading>
+        <toast hidden="{{toastHidden}}" bindchange="toast1Change">获取成功</toast>
+        <button type="{{btnType}}" size="{{btnSize}}" plain="{{btnPlain}}" bindtap="getAjaxData">数据请求</button>
+
+        <button type="{{btnType}}" size="{{btnSize}}" plain="{{btnPlain}}" bindtap="toMapPage">定位</button>
+
+        <button type="{{btnType}}" size="{{btnSize}}" plain="{{btnPlain}}" bindtap="toUploadFilePage">上传文件</button>
+      </view>
+    </block>
+</view>

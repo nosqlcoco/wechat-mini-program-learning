@@ -1,0 +1,15 @@
+<view class="container">
+    <button size="default" type="primary" bindtap="chooseImage">选择图片</button>
+    <view wx:for="{{imgPaths}}"  wx:if="{{imgPaths.length > 0}}" wx:for-item="item" wx:for-index="index">
+        <image style="height: 200px; background-color: #eeeeee;" src="{{item}}"></image>
+    </view>
+
+    <button size="default" type="primary" bindtap="uploadImage" class="btn1cls">上传图片</button>
+    <toast hidden="{{toastHidden}}" bindchange="toast1Change">上传成功</toast>
+    <modal class="modal" title="提示" hidden="{{modalHidden}}" no-cancel bindconfirm="myconfirm">
+        <icon type="warn" size="45"/> <label >请选择图片!</label>
+    </modal>
+
+    <button size="default" type="primary" bindtap="downloadImage" class="btn1cls">下载图片</button>
+    <image style="height: 200px; background-color: #eeeeee;" src="{{downloadPath}}"></image>
+</view>

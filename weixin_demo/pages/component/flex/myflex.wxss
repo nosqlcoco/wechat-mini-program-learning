@@ -1,0 +1,19 @@
+.mycontainer {
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:space-around;
+     align-items:center;
+}
+.mycontainer view{
+    width: 50px;
+    text-align: center;
+}
+
+.c2{
+    /*flex-grow: 1;*/
+    background-color: yellowgreen;
+}
+.c3{
+    background-color: gray;
+    /*flex-grow: 1;*/
+}
