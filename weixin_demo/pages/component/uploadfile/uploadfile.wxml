@@ -12,4 +12,6 @@
 
     <button size="default" type="primary" bindtap="downloadImage" class="btn1cls">下载图片</button>
     <image style="height: 200px; background-color: #eeeeee;" src="{{downloadPath}}"></image>
+
+     <button size="default" type="primary" bindtap="previewImage" class="btn1cls">预览图片</button>
 </view>

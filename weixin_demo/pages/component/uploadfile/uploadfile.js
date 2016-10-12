@@ -49,7 +49,7 @@ Page({
           console.log(res)
           console.log('success')
           $this.setData({toastHidden: false})
-          console.log(res.data)
+          console.log(JSON.parse(res.data))
         },
         fail: function(res){
           console.log(res)
@@ -75,6 +75,22 @@ Page({
       type: 'image',
       success: function(res){
         $this.setData({downloadPath:res.tempFilePath})
+      }
+    })
+  },
+  previewImage: function(e){
+    console.log('eee')
+    wx.previewImage({
+      //current: 'http://img.3chunhui.com/headimg/kesq-crede.png',
+      urls: ['http://img.3chunhui.com/headimg/kesq-crede.png'],
+      success: function(res){
+        console.log(res)
+      },
+      fail: function(res){
+        console.log(res)
+      },
+      complete: function(res){
+        console.log(res)
       }
     })
   }

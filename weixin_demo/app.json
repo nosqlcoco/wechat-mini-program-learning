@@ -10,8 +10,7 @@
     "pages/component/myrequest/myreq"
   ],
   "window":{
-    "backgroundColor": "red",
-    "backgroundTextStyle":"light",
+    "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#585858",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"white",
