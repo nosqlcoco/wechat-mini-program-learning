@@ -1,8 +1,10 @@
+var app = getApp();
 var socketOpen = false;
 Page({
   data:{
     // text:"这是一个页面"
     inputValue: '',
+    //消息记录
     historyMsgList:[]
   },
   onLoad:function(options){
@@ -14,10 +16,10 @@ Page({
       inputValue: e.detail.value
     })
   },
+  //发送消息
   sendtap: function(e){
     var $this = this;
     if(socketOpen){
-      console.log(this.data.inputValue)
       wx.sendSocketMessage({
         data: JSON.stringify({
           user: $this.data.user,
@@ -34,28 +36,27 @@ Page({
   onReady:function(){
     var $this = this;
     var user = this.data.user;
-    // 页面渲染完成
+    //发起websocket连接
     wx.connectSocket({
-      url:'ws://localhost:8090/wxchatdemo/webSocket?user=' + user
+      url: app.globalData.ws + '/wxchatdemo/webSocket?user=' + user
     })
     wx.onSocketOpen(function(res) {
       socketOpen = true;
     
       var arr = $this.data.historyMsgList;
-      arr.push(user + '登录成功')
+      arr.push(user + '登录成功');
       $this.setData({historyMsgList:arr});
 
-      console.log('WebSocket连接已打开！')
+      console.log('WebSocket连接已打开！');
     })
     wx.onSocketError(function(res){
       console.log('WebSocket连接打开失败，请检查！')
     }),
+    //接收消息
     wx.onSocketMessage(function(res){
       var data = JSON.parse(res.data);
-     // $this.setData.historyMsgList.push('接收到'+data.user+'的消息，Ta说：'+ data.content);
-
       var arr = $this.data.historyMsgList;
-      arr.push('接收到'+data.user+'的消息，Ta说：'+ data.content)
+      arr.push('接收到'+data.user+'的消息，Ta说:' + data.content)
       $this.setData({historyMsgList:arr});
     })
   },
@@ -67,6 +68,5 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
-  },
-  
+  }
 })
