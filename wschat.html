@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/open/libs/weui/1.0.2/weui.min.css">
+</head>
+<body>
+	<div class="weui-cells__title">聊天</div>
+	<div class="weui-cells weui-cells_form">
+	    <div class="weui-cell weui-cell_vcode">
+	        <div class="weui-cell__hd">
+	            <label class="weui-label">昵称</label>
+	        </div>
+	        <div class="weui-cell__bd">
+	            <input class="weui-input" type="text" placeholder="请输入昵称" id="user">
+	        </div>
+	        <div class="weui-cell__ft">
+	            <a href="javascript:;" class="weui-vcode-btn" id="loginbtn">登录</a>
+	        </div>
+	    </div>
+	   	 <div class="weui-cell weui-cell_vcode">
+	        <div class="weui-cell__hd">
+	            <label class="weui-label">内容</label>
+	        </div>
+	        <div class="weui-cell__bd">
+	            <input class="weui-input" type="text" placeholder="请输入内容" id="content">
+	        </div>
+	        <div class="weui-cell__ft">
+	            <a href="javascript:;" class="weui-vcode-btn" id="sendbtn">发送</a>
+	        </div>
+	    </div>
+	</div>
+
+	<div class="weui-cells__title">聊天记录</div>
+	<div class="weui-cells" id="history">
+	   
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="http://cdn.bootcss.com/jquery/2.0.2/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/reconnecting-websocket/1.0.0/reconnecting-websocket.min.js"></script>
+<script type="text/javascript">
+	
+	$(function(){
+		$('#loginbtn').on('click',function(){
+			var user = $('#user').val();
+
+			if (user == null) {
+				alert('请输入用户名')
+				return false;
+			}
+			var host = 'ws://localhost:8090/wxchatdemo/webSocket?user=' + user;
+			var websocket;
+			if ('WebSocket' in window) {
+				websocket = new ReconnectingWebSocket(host, null, {debug:true, maxReconnectAttempts:4});
+				} else if ('MozWebSocket' in window) {
+					websocket = new MozWebSocket(host);
+				} else {
+					websocket = new SockJS(host);
+				}
+				websocket.onopen = function(evnt) {
+					console.log("websocket连接上");
+					insertCell('登录成功',user)
+
+				};
+				websocket.onmessage = function(evnt) {
+					var data = JSON.parse(event.data);
+
+					insertCell('收到' + data.user + '消息', data.content)
+
+				};
+				websocket.onerror = function(evnt) {
+					console.log("websocket错误");
+				};
+				websocket.onclose = function(evnt) {
+					console.log("websocket关闭");
+				};
+				$('#sendbtn').on('click',function(){
+					var content = $('#content').val();
+					if(content == null){
+						alert('请输入内容');
+						return false;
+					}
+					websocket.send(JSON.stringify({
+						user: user,
+						content: content
+					}));
+					insertCell('发送消息',content);
+				})
+
+		});
+
+		function insertCell(title,content){
+			var str = '<div class="weui-cell"> <div class="weui-cell__bd"><p>' + title + '</p></div><div class="weui-cell__ft">' + content + '</div></div>';
+			$('#history').append(str);
+		}
+	});
+	
+</script>
