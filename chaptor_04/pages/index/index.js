@@ -23,6 +23,7 @@ Page({
       })
     })
   },
+  //开始播放
   startplay: function(e){
     console.log('paly')
     wx.playBackgroundAudio({
@@ -34,6 +35,7 @@ Page({
       }
     })
   },
+  //暂停
   pauseplay: function(e){
      console.log('pause')
      wx.pauseBackgroundAudio()
@@ -43,6 +45,7 @@ Page({
        }
      })
   },
+  //停止播放
   stopplay: function(e){
       console.log('stop')
       wx.stopBackgroundAudio()
