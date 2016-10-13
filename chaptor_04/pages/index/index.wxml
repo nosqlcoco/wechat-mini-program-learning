@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="container mycontainer">
+    <button size="default" type="primary" bindtap="startplay" class="btncls"><i class="icon ion-play"></i></button>
+    <button size="default" type="warn" bindtap="pauseplay" class="btncls"><i class="icon ion-pause"></i></button>
+    <button size="default" type="primary" bindtap="stopplay" class="btncls"><i class="icon ion-stop"></i></button>
+    <button size="default" type="primary" bindtap="backward" class="btncls"><i class="icon ion-skip-backward"></i></button>
+    <button size="default" type="primary" bindtap="forward" class="btncls"><i class="icon ion-skip-forward"></i></button>
+</view>
