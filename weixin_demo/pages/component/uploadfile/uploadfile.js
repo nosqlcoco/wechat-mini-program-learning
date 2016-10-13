@@ -2,6 +2,7 @@ Page({
   data:{
     modalHidden: true,
     toastHidden: true,
+    imgShow: false,
     imgPaths: [],
     downloadPath: ''
   },
@@ -74,7 +75,22 @@ Page({
       url: 'http://img.3chunhui.com/headimg/kesq-crede.png',
       type: 'image',
       success: function(res){
-        $this.setData({downloadPath:res.tempFilePath})
+        $this.setData({downloadPath:res.tempFilePath,imgShow: true})
+        
+      }
+    })
+  },
+  previewImage: function(e){
+    wx.previewImage({
+      urls:['http://img.3chunhui.com/headimg/kesq-crede.png'],
+      success: function(e){
+        console.log('success')
+      },
+      fail: function(e){
+        console.log('fail')
+      },
+      complete: function(e){
+        console.log('complete')
       }
     })
   },

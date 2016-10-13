@@ -1,0 +1,4 @@
+<view class="container">
+  <input type="text" placeholder="请输入昵称"  class="ipt-cls" placeholder-style="font-size:14px;" bindinput="bindKeyInput"/>
+  <button size="default" type="primary" class="btn-login" bindtap="logintap">登录</button>
+</view>
