@@ -19,7 +19,20 @@ function formatNumber(n) {
 function getDate(){
   return new Date();
 }
+
+function myrequest(data,url,callback){
+  wx.request({
+      url: url,
+      data: data,
+      method: 'GET',
+      fail: function(){
+
+      },
+      success: callback
+  });
+}
 module.exports = {
   formatTime: formatTime,
-  getDate : getDate
+  getDate : getDate,
+  request : myrequest
 }

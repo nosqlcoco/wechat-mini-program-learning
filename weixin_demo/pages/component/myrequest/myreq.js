@@ -14,20 +14,12 @@ Page({
         title: '微信小程序Demo'
     });
     wx.showNavigationBarLoading();
-    wx.request({
-      url: 'http://appservice.3chunhui.com/chunhui/m/user@login.do',
-      data: {user:'13125052494',pwd:'E10ADC3949BA59ABBE56E057F20F883E'},
-      method: 'GET',
-      fail: function(){
-
-      },
-      success: function(res){
-        wx.stopPullDownRefresh()
-        console.log(res);
-        that.setData({loadingHidden: true,toastHidden: false});
-        wx.hideNavigationBarLoading()
-      }
-    });
+    util.request({user:'13125052494',pwd:'E10ADC3949BA59ABBE56E057F20F883E'},'http://appservice.3chunhui.com/chunhui/m/user@login.do',function(res){
+      wx.stopPullDownRefresh()
+      console.log(res);
+      that.setData({loadingHidden: true,toastHidden: false});
+      wx.hideNavigationBarLoading()
+    })
   },
    //完成提示
   toast1Change: function(event){
