@@ -12,4 +12,5 @@
 - chaptor_01: [微信小程序之生命周期(三)](http://www.cnblogs.com/nosqlcoco/p/wxsmallcycle.html)
 - chaptor_02: 小程序触控事件
 - chaptor_03: 小程序websocket长连接
+- chaptor_04: 音乐播放控制
 - weixin_Demo: UI组件
