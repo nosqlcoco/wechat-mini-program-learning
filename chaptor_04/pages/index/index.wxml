@@ -7,12 +7,14 @@
     <button size="default" type="primary" bindtap="forward" class="btncls"><i class="icon ion-skip-forward"></i></button>
 </view>
 <view>
+    <text>当前：{{currenduration}}/{{duration}}</text>
     <view class="weui-progress">
         <view class="weui-progress__bar">
-            <view class="weui-progress__inner-bar js_progress myprogress" style="width: {{progressWith}}%"></view>
+            <view class="weui-progress__inner-bar js_progress myprogress" style="width: {{progressWith}}%" show-info></view>
         </view>
     </view>
 </view>
 <view class="container">
+   
     <video src="{{videoSrc}}"></video>
 </view>

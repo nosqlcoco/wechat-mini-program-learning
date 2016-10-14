@@ -6,8 +6,11 @@ Page({
     motto: 'Hello 小程序',
     userInfo: {},
     progressWith: 0,
+    currenduration: 0,
+    duration: 0,
     //视频路径
-    videoSrc: '../../media/test.mp4'
+    videoSrc: '../../media/test.mp4',
+    intervalId: ''
   },
   //事件处理函数
   bindViewTap: function() {
@@ -30,25 +33,24 @@ Page({
   startplay: function(e){
     var $this = this;
     console.log('paly')
+
+    wx.getBackgroundAudioPlayerState({
+      success: function(res){
+        var s = res.status;
+        if(s == 0){
+          wx.playVoice()
+        }
+        $this.setData({duration:Math.ceil(res.duration)});
+      }
+    })
+
     wx.playBackgroundAudio({
-      dataUrl: 'http://120.202.249.204/ich_flag/yinyueshiting.baidu.com/data2/music/42386104/73190311476338461128.mp3?xcode=c6cc0c6d9ee25e5758a651629ec11350',
-      title: '朋友',
+      dataUrl: 'http://yinyueshiting.baidu.com/data2/music/239833557/739948431476324061128.mp3?xcode=37d73fc57b0c55ac31189f16455400eb',
+      title: '悟空',
       coverImgUrl: 'http://musicdata.baidu.com/data2/pic/89838191/89838191.jpg',
       success: function(res){
-        console.log('加载成功')
-        setInterval(function(){
-          wx.getBackgroundAudioPlayerState({
-            success: function(res){
-              console.log(res)
-              var prog = parseInt(res.currentPosition) / parseInt(res.duration);
-              console.log(prog)
-              $this.setData({progressWith:prog});
-            },
-            complete: function(res){
-              console.log(res);
-            }
-          })
-        },1000);
+        var id = $this.setMusicInterval();
+        $this.setData({intervalId: id})
       }
     })
   },
@@ -56,28 +58,27 @@ Page({
   pauseplay: function(e){
      console.log('pause')
      wx.pauseBackgroundAudio()
-     wx.getBackgroundAudioPlayerState({
-       success: function(res){
-        console.log(res)
-       }
-     })
+     clearInterval(this.data.intervalId)
   },
   //停止播放
   stopplay: function(e){
       console.log('stop')
       wx.stopBackgroundAudio()
-      wx.getBackgroundAudioPlayerState({
-          success: function(res){
-          console.log(res)
-        }
-      })
+      this.setData({currenduration:0, progressWith:0})
+      clearInterval(this.data.intervalId)
     },
     //快进
     forward: function(e){
+      var $this = this;
       wx.getBackgroundAudioPlayerState({
        success: function(res){
+        var duration = res.currentPosition;
+
+        if(duration > $this.data.duration + 5){
+          duration = $this.data.duration;
+        }
         wx.seekBackgroundAudio({
-          position: res.currentPosition + 5
+          position: duration
         })
        }
      })
@@ -97,5 +98,19 @@ Page({
         })
        }
      })
+    },
+    setMusicInterval: function(){
+      var $this = this;
+      var id = setInterval(function(){
+          wx.getBackgroundAudioPlayerState({
+            success: function(res){
+              console.log(res)
+              var prog = parseInt(res.currentPosition) / parseInt(res.duration);
+              console.log(prog)
+              $this.setData({progressWith:prog * 100,currenduration:Math.ceil(res.currentPosition)});
+            }
+          })
+        },1000);
+        return id;
     }
 })
