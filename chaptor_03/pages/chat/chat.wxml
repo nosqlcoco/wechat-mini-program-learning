@@ -1,4 +1,8 @@
 <view class="container">
     <input type="text" bindinput="bindKeyInput" placeholder="请输入内容"/>
     <button size="default" type="primary" bindtap="sendtap">发送</button >
+
+    <view wx:for="{{historyMsgList}}">
+        <view>{{item}}</view>
+    </view>
 </view>
