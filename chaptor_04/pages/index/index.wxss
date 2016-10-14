@@ -28,3 +28,10 @@
 .btncls{
   margin-top: 10px;
 }
+.weui-progress__bar{
+  background-color: 'gray'
+}
+.myprogress{
+  height:5px;
+  background-color:#1AAD19;
+}

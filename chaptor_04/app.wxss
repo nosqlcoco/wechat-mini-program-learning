@@ -1,5 +1,6 @@
 /**app.wxss**/
 @import 'ionicons.min.css';
+@import 'weui.min.css';
 .container {
   height: 100%;
   display: flex;

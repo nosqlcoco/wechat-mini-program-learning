@@ -4,7 +4,8 @@ var app = getApp()
 Page({
   data: {
     motto: 'Hello 小程序',
-    userInfo: {}
+    userInfo: {},
+    progressWith: 0
   },
   //事件处理函数
   bindViewTap: function() {
@@ -25,6 +26,7 @@ Page({
   },
   //开始播放
   startplay: function(e){
+    var $this = this;
     console.log('paly')
     wx.playBackgroundAudio({
       dataUrl: 'http://120.202.249.204/ich_flag/yinyueshiting.baidu.com/data2/music/42386104/73190311476338461128.mp3?xcode=c6cc0c6d9ee25e5758a651629ec11350',
@@ -32,6 +34,19 @@ Page({
       coverImgUrl: 'http://musicdata.baidu.com/data2/pic/89838191/89838191.jpg',
       success: function(res){
         console.log('加载成功')
+        setInterval(function(){
+          wx.getBackgroundAudioPlayerState({
+            success: function(res){
+              console.log(res)
+              /*var prog = parseInt(res.currentPosition) / parseInt(res.duration);
+              console.log(prog)
+              $this.setData({progressWith:prog});*/
+            },
+            complete: function(res){
+              console.log(res);
+            }
+          })
+        },1000);
       }
     })
   },
