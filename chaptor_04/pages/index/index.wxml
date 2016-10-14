@@ -13,3 +13,6 @@
         </view>
     </view>
 </view>
+<view class="container">
+    <video src="{{videoSrc}}"></video>
+</view>

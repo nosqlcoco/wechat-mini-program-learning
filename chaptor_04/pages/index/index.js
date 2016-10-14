@@ -5,7 +5,9 @@ Page({
   data: {
     motto: 'Hello 小程序',
     userInfo: {},
-    progressWith: 0
+    progressWith: 0,
+    //视频路径
+    videoSrc: '../../media/test.mp4'
   },
   //事件处理函数
   bindViewTap: function() {
@@ -38,9 +40,9 @@ Page({
           wx.getBackgroundAudioPlayerState({
             success: function(res){
               console.log(res)
-              /*var prog = parseInt(res.currentPosition) / parseInt(res.duration);
+              var prog = parseInt(res.currentPosition) / parseInt(res.duration);
               console.log(prog)
-              $this.setData({progressWith:prog});*/
+              $this.setData({progressWith:prog});
             },
             complete: function(res){
               console.log(res);
