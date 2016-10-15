@@ -50,7 +50,7 @@
 				alert('请输入用户名')
 				return false;
 			}
-			var host = 'ws://localhost:8090/wxchatdemo/webSocket?user=' + user;
+			var host = 'ws://localhost:9090/weappservice/websocket?name=' + user;
 			var websocket;
 			if ('WebSocket' in window) {
 				websocket = new ReconnectingWebSocket(host, null, {debug:true, maxReconnectAttempts:4});
