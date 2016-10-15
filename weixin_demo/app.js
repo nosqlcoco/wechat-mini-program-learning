@@ -26,6 +26,6 @@ App({
   },
   globalData:{
     userInfo:null,
-    server: 'http://test.3chunhui.com'
+    server: 'http://localhost:9090/weappservice'
   }
 })

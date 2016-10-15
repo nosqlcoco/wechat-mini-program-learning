@@ -14,7 +14,7 @@ Page({
         title: '微信小程序Demo'
     });
     wx.showNavigationBarLoading();
-    util.request({user:'13125052494',pwd:'E10ADC3949BA59ABBE56E057F20F883E'},'http://appservice.3chunhui.com/chunhui/m/user@login.do',function(res){
+    util.request({name:'xiaoqiang'},getApp().globalData.server + '/test',function(res){
       wx.stopPullDownRefresh()
       console.log(res);
       that.setData({loadingHidden: true,toastHidden: false});
