@@ -38,10 +38,7 @@ Page({
     var user = this.data.user;
     //发起websocket连接
     wx.connectSocket({
-      url: app.globalData.ws + '/wxchatdemo/webSocket?user=' + user,
-      data: {
-        "user": user
-      }
+      url: app.globalData.ws + '/weappservice/websocket?name=' + user
     })
     wx.onSocketOpen(function(res) {
       socketOpen = true;
