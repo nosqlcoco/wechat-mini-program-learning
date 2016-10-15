@@ -47,7 +47,6 @@ Page({
           'user': 'kesq'
         },
         success: function(res){
-          console.log(res)
           console.log('success')
           $this.setData({toastHidden: false})
           console.log(JSON.parse(res.data))

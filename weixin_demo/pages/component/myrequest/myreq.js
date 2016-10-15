@@ -16,7 +16,7 @@ Page({
     wx.showNavigationBarLoading();
     util.request({name:'xiaoqiang'},getApp().globalData.server + '/test',function(res){
       wx.stopPullDownRefresh()
-      console.log(res);
+      console.log(res.data)
       that.setData({loadingHidden: true,toastHidden: false});
       wx.hideNavigationBarLoading()
     })
