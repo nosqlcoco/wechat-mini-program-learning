@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="login_code">
+    <text>code: </text>{{loginCode}}
+  </view>
+  <view class="get3rdSessionId">
+    <button type="default" size="default" bindtap="get3rdSessionId">获取3rdSessionId</button>
+  </view>
+  <view class="session_id">
+    <text>sessionId: </text>{{sessionId}}
+  </view>
+  <view class="getUserAllData">
+    <button type="default" size="default" bindtap="getUserAllData">解密用户信息</button>
+  </view>
+  <view class="userAllInfo">
+    <text>openId: </text>{{openId}}
+  </view>
+</view>
