@@ -26,6 +26,6 @@ App({
   },
   globalData:{
     userInfo:null,
-    ws:'ws://localhost:9090'
+    ws:'wss://localhost:8443'
   }
 })
