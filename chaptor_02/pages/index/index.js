@@ -6,7 +6,9 @@ Page({
     btnWidth: 200,
     touchLog:"",
     lastTapDiffTime: 0,
-    startPoint: [0,0]
+    startPoint: [0,0],
+    testArr: ['row1 \n row1.1','row2','row3','row4','row5'],
+    testStr:'我要\n换行'
   },
   //事件处理函数
   bindViewTap: function() {

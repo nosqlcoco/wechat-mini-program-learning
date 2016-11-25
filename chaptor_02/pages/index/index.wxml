@@ -1,4 +1,10 @@
 <!--index.wxml-->
-<scroll-view class="container">
+<view class="container">
   <button id="myid" style="width:{{btnWidth}}px" data-info-one="extra info" type="primary" bindtap="mytap" bindlongtap="mylongtap" bindtouchstart="mytouchstart" bindtouchmove="mytouchmove" bindtouchcancel="mytouchcacel" bindtouchend="mytouchend">点我吧</button>
-</scroll-view>
+  <block wx:for="{{testArr}}">
+    <view>{{item}}</view>
+  </block>
+  <text>{{testObj.key}}</text>
+  <text>{{testArr[0]}}</text>
+</view>
+

@@ -18,6 +18,7 @@
         <button type="{{btnType}}" size="{{btnSize}}" plain="{{btnPlain}}" bindtap="toMapPage">定位</button>
 
         <button type="{{btnType}}" size="{{btnSize}}" plain="{{btnPlain}}" bindtap="toUploadFilePage">上传文件</button>
+        <block wx:if="{{0 != 0}}"><view>ssss</view></block>
       </view>
     </block>
 </view>

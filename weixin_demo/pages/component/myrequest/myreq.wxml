@@ -2,4 +2,5 @@
     <loading hidden="{{loadingHidden}}" bindchange="loadingChange">{{loadingText}}</loading>
     <toast hidden="{{toastHidden}}" bindchange="toast1Change">获取成功</toast>
     <button size="mini" type="primary" bindtap="getServerData">下拉请求数据</button>
+    <button size="mini" type="primary" bindtap="getServerDataByyClick">点击获取数据</button>
 </view>

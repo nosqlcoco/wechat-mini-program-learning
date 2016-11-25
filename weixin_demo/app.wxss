@@ -1,4 +1,3 @@
-@import 'weui.min.css';
 /**app.wxss**/
 .container {
   height: 100%;

@@ -21,6 +21,20 @@ Page({
       wx.hideNavigationBarLoading()
     })
   },
+  getServerDataByyClick: function(e){
+    wx.request({
+      url: 'http://appservice.3chunhui.com/chunhui/m/user@login.do',
+      header: {'Accept-language':'en_US'},
+      data: {user:'13125052494',pwd:'E10ADC3949BA59ABBE56E057F20F883E'},
+      method: 'GET',
+      fail: function(res){
+
+      },
+      success: function(res){
+        console.log(res)
+      }
+  });
+  },
    //完成提示
   toast1Change: function(event){
   	this.setData({toastHidden: true});

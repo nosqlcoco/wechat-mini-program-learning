@@ -8,7 +8,8 @@ Page({
     btnHidden: true,
     loadingHidden: true,
     toastHidden: true,
-    loadingText: '加载中...'
+    loadingText: '加载中...',
+    textHidden: false
   },
   //容器布局
   openFlexPage: function(event){
