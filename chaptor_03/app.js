@@ -26,10 +26,6 @@ App({
   },
   globalData:{
     userInfo:null,
-<<<<<<< HEAD
-    ws:'ws://120.26.231.155:9090'
-=======
     ws:'wss://localhost:8443'
->>>>>>> e0189f4860c54323c2ab7910f5b6aa042e293283
   }
 })
