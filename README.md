@@ -14,3 +14,5 @@
 - chaptor_03: 小程序websocket长连接
 - chaptor_04: 音乐播放控制
 - weixin_Demo: UI组件
+
+图片上传和长连接依赖后台接口,请参照另一个项目[springboot-weapp-demo](https://github.com/cocoli/springboot-weapp-demo)

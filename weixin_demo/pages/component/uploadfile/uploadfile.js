@@ -39,15 +39,14 @@ Page({
         this.setData({modalHidden:false});
     }
   	wx.uploadFile({
-        url: getApp().globalData.server + '/chunhui/m/doctor@uploadCredeImage.do',
+        url: getApp().globalData.server + '/uploadfile',
         filePath: this.data.imgPaths[0],
-        name: 'files',
+        name: 'file',
         header: {},
         formData: {
           'user': 'kesq'
         },
         success: function(res){
-          console.log(res)
           console.log('success')
           $this.setData({toastHidden: false})
           console.log(JSON.parse(res.data))

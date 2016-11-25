@@ -13,11 +13,15 @@ App({
     }else{
       //调用登录接口
       wx.login({
-        success: function () {
+        success: function (res) {
+          that.globalData.loginCode = res.code
           wx.getUserInfo({
             success: function (res) {
               that.globalData.userInfo = res.userInfo
+              that.globalData.iv=res.iv
+              that.globalData.encryptedData=res.encryptedData
               typeof cb == "function" && cb(that.globalData.userInfo)
+
             }
           })
         }
@@ -26,6 +30,11 @@ App({
   },
   globalData:{
     userInfo:null,
-    server: 'http://localhost:9090/weappservice'
+    loginCode: null,
+    encryptedData: null,
+    iv: null,
+    server: 'https://localhost:8443/weappservice/api/v1',
+    appId: 'JWEJIJ345QHWJKENVKF',
+    apiNames : ['WX_CODE','WX_CHECK_USER','WX_DECODE_USERINFO']
   }
 })
