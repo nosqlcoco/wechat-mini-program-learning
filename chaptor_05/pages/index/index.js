@@ -4,12 +4,21 @@ var app = getApp()
 var httpclient = require('../../utils/httpclient.js')
 Page({
   data: {
-    loginCode: null,
+    btnType: 'primary',
+    btnSize: 'default',
+    btnPlain: false,
+
+    nickname: '',
+    city: '',
+    loginCode: '',
+
     encryptedData:'',
     iv:'',
     userInfo: {},
-    sessionId: null,
-    openId: null
+    sessionId: '',
+    openId: '',
+    unionId: '',
+    nickname1: ''
   },
   //事件处理函数
   bindViewTap: function() {
@@ -18,21 +27,25 @@ Page({
     })
   },
   onLoad: function () {
-    console.log('onLoad')
+    
+  },
+  //登录
+  wxlogin: function(e){
     var that = this
     
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){
       //更新数据
       that.setData({
-        userInfo:userInfo,
+        userInfo: userInfo,
+        nickname: userInfo.nickName,
+        city: userInfo.city,
         loginCode: app.globalData.loginCode,
         encryptedData: app.globalData.encryptedData,
         iv: app.globalData.iv
       })
     })
   },
-  //5lqycNTjt6f3wqhIluyJl3W0cyhwxfwNENsy4U8VP6RUZ0GYEExLe7X6XVGIppen
   get3rdSessionId: function(e){
     var that = this;
     //根据code获取sessionsession_key和openid

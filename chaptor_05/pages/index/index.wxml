@@ -1,22 +1,75 @@
 <!--index.wxml-->
-<view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="login_code">
-    <text>code: </text>{{loginCode}}
-  </view>
-  <view class="get3rdSessionId">
-    <button type="default" size="default" bindtap="get3rdSessionId">获取3rdSessionId</button>
-  </view>
-  <view class="session_id">
-    <text>sessionId: </text>{{sessionId}}
-  </view>
-  <view class="getUserAllData">
-    <button type="default" size="default" bindtap="getUserAllData">解密用户信息</button>
-  </view>
-  <view class="userAllInfo">
-    <text>openId: </text>{{openId}}
-  </view>
+<view class="nav-block wrap">
+    <block> 
+      <view class="wrap-item">
+        <button type="{{btnType}}" size="{{btnSize}}" plain="{{btnPlain}}" bindtap="wxlogin">登录</button>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">昵称：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" value='{{nickname}}' />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">城市：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" value='{{city}}' />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">js_code：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" value='{{loginCode}}' />
+                </view>
+            </view>
+        </view>
+
+        <button type="{{btnType}}" size="{{btnSize}}" plain="{{btnPlain}}" bindtap="get3rdSessionId">获取3rdSessionId</button>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">sessionId：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" value='{{sessionId}}' />
+                </view>
+            </view>
+        </view>
+
+        <button type="{{btnType}}" size="{{btnSize}}" plain="{{btnPlain}}" bindtap="getUserAllData">解密用户信息</button>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">昵称: </view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" value='{{nickname1}}' />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">openId</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" value='{{openId}}' />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">unionId</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" value='{{unionId}}' />
+                </view>
+            </view>
+            
+        </view>
+      </view>
+    </block>
 </view>
