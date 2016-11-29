@@ -46,6 +46,7 @@ Page({
       })
     })
   },
+  // 从服务端获取sessionId
   get3rdSessionId: function(e){
     var that = this;
     //根据code获取sessionsession_key和openid
@@ -53,10 +54,14 @@ Page({
       title: '正在请求',
       icon: 'loading',
       duration: 10000
-    })
+    });
+
     httpclient.req(
       '/wx/getSession',
-      {apiName: 'WX_CODE', code: this.data.loginCode},
+      {
+          apiName: 'WX_CODE',
+          code: this.data.loginCode
+      },
       'GET', 
       function(result){
         wx.hideToast()
@@ -69,6 +74,7 @@ Page({
       }
     );
   },
+  //解密用户敏感数据
   getUserAllData: function(e){
     var that = this;
     wx.showToast({
@@ -87,8 +93,12 @@ Page({
       'GET', 
       function(result){
         wx.hideToast()
-        console.log(result.data.data)
-        that.setData({openId:JSON.parse(result.data.data).openId})
+        var data = JSON.parse(result.data.data);
+        that.setData({
+          openId: data.openId,
+          unionId: data.unionId,
+          nickname1: data.nickName
+        })
       },
       function(result){
         console.log(result)

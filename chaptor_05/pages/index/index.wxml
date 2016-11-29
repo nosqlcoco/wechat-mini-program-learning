@@ -68,7 +68,6 @@
                     <input class="weui-input" value='{{unionId}}' />
                 </view>
             </view>
-            
         </view>
       </view>
     </block>
