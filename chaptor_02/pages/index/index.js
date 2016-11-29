@@ -6,9 +6,7 @@ Page({
     btnWidth: 200,
     touchLog:"",
     lastTapDiffTime: 0,
-    startPoint: [0,0],
-    testArr: ['row1 \n row1.1','row2','row3','row4','row5'],
-    testStr:'我要\n换行'
+    startPoint: [0,0]
   },
   //事件处理函数
   bindViewTap: function() {
@@ -49,6 +47,7 @@ Page({
   //触摸开始
   mytouchstart: function(e){
     console.log(e.timeStamp + '- touch start')
+    console.log(e.touches.length);
     this.setData({startPoint: [e.touches[0].pageX, e.touches[0].pageY]});
   },
   //触摸点移动
