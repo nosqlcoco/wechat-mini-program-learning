@@ -1,0 +1,8 @@
+/**index.wxss**/
+.redbutton{
+  color: #ff0000;
+}
+
+.yellowbutton{
+  color: #ffff00;
+}
