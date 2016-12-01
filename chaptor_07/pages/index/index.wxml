@@ -1,0 +1,35 @@
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindblur="hideInput" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+        <view class="weui-grids">
+            <block wx:for-items="{{gridIcons}}" wx:key="{{index}}">
+                <navigator url="/pages/article/list?path={{item.path}}&desc={{item.desc}}" class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="/images/{{item.icon}}"/>
+                    <view class="weui-grid__label">{{item.text}}</view>
+                </navigator>
+            </block>
+        </view>
+
+       <view class="weui-footer weui-footer_fixed-bottom">
+            <view class="weui-footer__links">
+                <navigator url="" class="weui-footer__link">小黄象</navigator>
+            </view>
+            <view class="weui-footer__text">Copyright © 精品专栏组</view>
+        </view>
+    </view>
+</view>
