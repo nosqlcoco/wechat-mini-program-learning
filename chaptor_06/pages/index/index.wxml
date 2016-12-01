@@ -1,4 +1,9 @@
 <!--index.wxml-->
 <view class="container">
-  <button class="weui-btn weui-btn-area">我是按钮</button>
+    <button class="weui-btn weui-btn-area" bindtap="toPage1">wx.navigateTo跳转</button>
+    <button class="weui-btn weui-btn-area" bindtap="toPage2">wx.redirectTo跳转</button>
+    
+    <view class="weui-btn">
+      <navigator url="../route4/route4" hover-class="navigator-hover">navigator导航组件跳转</navigator>
+    </view>
 </view>

@@ -1,12 +1,16 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/route1/route1",
+    "pages/route2/route2",
+    "pages/route3/route3",
+    "pages/route4/route4"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "页面路由",
     "navigationBarTextStyle":"black"
   }
 }

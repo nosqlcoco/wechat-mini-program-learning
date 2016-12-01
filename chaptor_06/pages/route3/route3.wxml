@@ -1,0 +1,5 @@
+<!--pages/route3/route3.wxml-->
+<view class="container">
+    <button class="weui-btn weui-btn-area" bindtap="backPage">wx.navigateBack返回</button>
+</view>
+

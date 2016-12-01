@@ -3,15 +3,32 @@
 var app = getApp()
 Page({
   data: {
-   
+
   },
   //事件处理函数
-  bindViewTap: function() {
+  bindViewTap: function () {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
   onLoad: function () {
-   
+
+  },
+  toPage1: function (e) {
+    console.log(e)
+    wx.navigateTo({
+      url: '../route1/route1',
+      success: function (res) {
+        console.log(res)
+      }
+    })
+  },
+  toPage2: function (e) {
+    wx.redirectTo({
+      url: '../route2/route2',
+      success: function(res){
+        console.log(res)
+      }
+    })
   }
 })
