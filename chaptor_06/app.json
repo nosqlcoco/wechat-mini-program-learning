@@ -5,7 +5,8 @@
     "pages/route1/route1",
     "pages/route2/route2",
     "pages/route3/route3",
-    "pages/route4/route4"
+    "pages/route4/route4",
+    "pages/route5/route5"
   ],
   "window":{
     "backgroundTextStyle":"light",

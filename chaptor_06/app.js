@@ -1,4 +1,5 @@
 //app.js
+
 var host = 'baidu.com'
 App({
   onLaunch: function () {

@@ -22,13 +22,5 @@ Page({
         console.log(res)
       }
     })
-  },
-  toPage2: function (e) {
-    wx.redirectTo({
-      url: '../route2/route2',
-      success: function(res){
-        console.log(res)
-      }
-    })
   }
 })

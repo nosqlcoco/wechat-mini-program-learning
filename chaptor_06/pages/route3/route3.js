@@ -16,10 +16,11 @@ Page({
   onUnload:function(){
     // 页面关闭
   },
-   backPage: function(e){
-    wx.navigateBack({
-      delta: 1, // 回退前 delta(默认为1) 页面
-      success: function(res){
+  toPage4: function (e) {
+    console.log(e)
+    wx.navigateTo({
+      url: '../route4/route4',
+      success: function (res) {
         console.log(res)
       }
     })

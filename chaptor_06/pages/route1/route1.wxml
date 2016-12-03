@@ -1,4 +1,4 @@
 <!--pages/route1/route1.wxml-->
 <view class="container">
-    <button class="weui-btn weui-btn-area" bindtap="backPage">wx.navigateBack返回</button>
+    <button class="weui-btn weui-btn-area" bindtap="toPage2">我是route1,点我跳转到route2</button>
 </view>

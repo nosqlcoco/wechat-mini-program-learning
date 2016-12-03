@@ -1,4 +1,4 @@
-// pages/route1/route1.js
+// pages/route5/route5.js
 Page({
   data:{},
   onLoad:function(options){
@@ -6,7 +6,6 @@ Page({
   },
   onReady:function(){
     // 页面渲染完成
-    var pages = getCurrentPages();
   },
   onShow:function(){
     // 页面显示
@@ -16,14 +15,5 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
-  },
-  toPage2: function (e) {
-    console.log(e)
-    wx.navigateTo({
-      url: '../route2/route2',
-      success: function (res) {
-        console.log(res)
-      }
-    })
   }
 })

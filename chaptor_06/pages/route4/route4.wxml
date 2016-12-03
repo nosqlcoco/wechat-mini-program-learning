@@ -1,5 +1,8 @@
 <!--pages/route4/route4.wxml-->
 <view class="container">
-    <button class="weui-btn weui-btn-area" bindtap="backPage">wx.navigateBack返回</button>
+     <button class="weui-btn weui-btn-area" bindtap="toPage5">我是route4，点击跳转到route5</button>
+    <button class="weui-btn weui-btn-area" bindtap="navigateBackPage">wx.navigateBack返回</button>
+    <button class="weui-btn weui-btn-area" bindtap="redirectPage">wx.redirectTo重定向</button>
+    <button class="weui-btn weui-btn-area" bindtap="navigateToPage">wx.navigateTo重定向</button>
 </view>
 

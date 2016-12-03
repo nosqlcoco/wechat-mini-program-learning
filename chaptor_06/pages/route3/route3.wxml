@@ -1,5 +1,5 @@
 <!--pages/route3/route3.wxml-->
 <view class="container">
-    <button class="weui-btn weui-btn-area" bindtap="backPage">wx.navigateBack返回</button>
+    <button class="weui-btn weui-btn-area" bindtap="toPage4">我是route3,点我跳转到route4</button>
 </view>
 
