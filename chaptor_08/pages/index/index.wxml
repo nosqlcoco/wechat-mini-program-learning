@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="section">
+  <input placeholder="输入key" bindblur="keyIpt" value="{{storageKey}}"/>
+   <input placeholder="输入value" bindblur="valueIpt" value="{{storageValue}}" />
+  <view class="btn-area">
+    <button bindtap="save">保存</button>
+  </view>
+  <view class="btn-area">
+    <button bindtap="getData">获取数据</button>
+  </view>
+  <view class="btn-area">
+    <button bindtap="getDataInfo">获取缓存信息</button>
+  </view>
+  <view class="btn-area">
+    <button bindtap="removeData">移除数据</button>
+  </view>
+  <view class="btn-area">
+    <button bindtap="clearData">清除缓存</button>
+  </view>
+</view>
+</view>
