@@ -3,7 +3,7 @@
        <view class="weui-cells__title">{{desc}}</view>
         <view class="weui-cells weui-cells_after-title">
             <block wx:for-items="{{articles}}" wx:key="{{index}}">
-                <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <navigator url="../articledetail/detail?id={{item.id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                     <view class="weui-cell__hd">
                         <image src="{{item.author.headimg}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
                     </view>

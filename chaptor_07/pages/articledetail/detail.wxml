@@ -1,2 +1,28 @@
 <!--pages/articledetail/detail.wxml-->
-<text>pages/articledetail/detail.wxml</text>
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="page">
+    <view class="page_hd">
+        <view  bindtap="bindViewTap" class="userinfo">
+            <image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover"></image>
+                <view class="userinfo-mark">
+                    <text class="userinfo-nickname">{{nickName}}\n</text>
+                    <text class="userinfo-remark">{{remark}}</text>
+                </view>
+        </view>
+    </view>
+    <view class="page__bd">
+        <!--<scroll-view>
+            <text data="{{content}}"></text>
+        </scroll-view>-->
+        <view class="wxParse">
+             <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+        </view>
+       <view class="weui-footer weui-footer_fixed-bottom">
+            <view class="weui-footer__links">
+                <navigator url="" class="weui-footer__link">小黄象</navigator>
+            </view>
+            <view class="weui-footer__text">Copyright © 精品专栏组</view>
+        </view>
+    </view>
+</view>
+

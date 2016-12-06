@@ -1,8 +1,36 @@
 // pages/articledetail/detail.js
+var WxParse = require('../../wxParse/wxParse.js');
 Page({
-  data:{},
+  data:{
+    avatarUrl: '',
+    nickName: '',
+    remark: ''
+
+  },
   onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
+    var that = this;
+    var id = options.id;
+    wx.getStorage({
+      key: id,
+      success: function(res){
+        var data =res.data;
+       
+        wx.setNavigationBarTitle({
+          title: data.title,
+          success: function(res) {
+            
+          }
+        })
+
+        that.setData({
+          avatarUrl: data.author.headimg,
+          nickName: data.author.nickname,
+          remark: data.author.remark
+          //content: data.content
+        })
+        WxParse.wxParse('content', 'html', data.content, that,5);
+      }
+    })
   },
   onReady:function(){
     // 页面渲染完成

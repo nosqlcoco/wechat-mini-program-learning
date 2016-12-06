@@ -1,1 +1,28 @@
 /* pages/articledetail/detail.wxss */
+@import "../../wxParse/wxParse.wxss";
+.userinfo {
+  display: flex;
+  border-bottom: 1px solid #aaa;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.userinfo-mark{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  
+}
+.userinfo-nickname {
+  color: #aaa;
+}
+.userinfo-remark{
+  font-size: 15px;
+}
+.fixed-bottom{
+    background-color: yellow;
+}

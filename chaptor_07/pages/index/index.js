@@ -25,12 +25,6 @@ Page({
             inputShowed: true
         });
     },
-    hideInput: function () {
-        this.setData({
-            inputVal: "",
-            inputShowed: false
-        });
-    },
     clearInput: function () {
         this.setData({
             inputVal: ""
@@ -40,5 +34,19 @@ Page({
         this.setData({
             inputVal: e.detail.value
         });
+    },
+    search: function(e){
+        wx.navigateTo({
+          url: '/pages/article/list?type=search&text=' + this.data.inputVal,
+          success: function(res){
+            // success
+          },
+          fail: function() {
+            // fail
+          },
+          complete: function() {
+            // complete
+          }
+        })
     }
 })
