@@ -66,7 +66,7 @@ Page({
       function(result){
         wx.hideToast()
         var sessionId = result.data.data.sessionId;
-        that.setData({sessionId,sessionId})
+        that.setData({sessionId: sessionId})
         wx.setStorageSync('sessionId', sessionId)
       },
       function(result){
