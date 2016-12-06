@@ -11,9 +11,6 @@
         </view>
     </view>
     <view class="page__bd">
-        <!--<scroll-view>
-            <text data="{{content}}"></text>
-        </scroll-view>-->
         <view class="wxParse">
              <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
         </view>
