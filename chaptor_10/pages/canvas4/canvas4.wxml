@@ -1,0 +1,2 @@
+<!--pages/canvas4/canvas4.wxml-->
+<canvas canvas-id="canvas1"></canvas>

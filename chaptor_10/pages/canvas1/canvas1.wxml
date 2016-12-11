@@ -1,0 +1,9 @@
+<view>
+    <canvas 
+        class="canvas1" 
+        canvas-id="canvas1" 
+        bindtouchstart="mytouchstart" 
+        bindtouchmove="mytouchmove" 
+        bindtouchend="mytouchend">
+    </canvas>
+</view>

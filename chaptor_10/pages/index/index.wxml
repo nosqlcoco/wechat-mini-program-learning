@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="container">
+    <button type="default" size="default" bindtap="toCanvas1Page">canvas组件</button>
+    <button type="default" size="default" bindtap="toCanvas2Page">canvas变形</button>
+    <button type="default" size="default" bindtap="toCanvas3Page">canvas绘制</button>
+    <button type="default" size="default" bindtap="toCanvas4Page">canvas路径</button>
+    <button type="default" size="default" bindtap="toCanvas5Page">canvas样式</button>
+</view>

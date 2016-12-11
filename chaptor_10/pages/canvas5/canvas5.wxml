@@ -1,0 +1,2 @@
+<canvas canvas-id="canvas1"></canvas>
+<button type="default" size="default" bindtap="saveas">另存</button>

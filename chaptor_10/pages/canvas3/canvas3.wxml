@@ -1,0 +1,3 @@
+<!--pages/canvas3/canvas3.wxml-->
+<canvas canvas-id="canvas1"></canvas>
+<canvas canvas-id="canvas2"></canvas>

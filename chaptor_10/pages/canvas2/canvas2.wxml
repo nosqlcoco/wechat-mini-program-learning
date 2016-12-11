@@ -1,0 +1,4 @@
+<!--pages/canvas2/canvas2.wxml-->
+<canvas canvas-id="canvas_scale"></canvas>
+<canvas canvas-id="canvas_rotate"></canvas>
+<canvas canvas-id="canvas_translate"></canvas>

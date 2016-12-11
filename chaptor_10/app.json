@@ -1,0 +1,16 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/canvas1/canvas1",
+    "pages/canvas2/canvas2",
+    "pages/canvas3/canvas3",
+    "pages/canvas4/canvas4",
+    "pages/canvas5/canvas5"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Canvas学习",
+    "navigationBarTextStyle":"black"
+  }
+}
