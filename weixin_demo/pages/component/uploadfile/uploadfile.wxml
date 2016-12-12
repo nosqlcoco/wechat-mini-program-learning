@@ -1,6 +1,6 @@
 <view class="container">
     <button size="default" type="primary" bindtap="chooseImage">选择图片</button>
-    <view wx:for="{{imgPaths}}"  wx:if="{{imgPaths.length > 0}}" wx:for-item="item" wx:for-index="index">
+    <view wx:for="{{imgPaths}}"  wx:if="{{imgPaths.length > 0}}" wx:for-item="item" wx:for-index="index" wx:key="1">
         <image style="height: 200px; background-color: #eeeeee;" src="{{item}}"></image>
     </view>
 
