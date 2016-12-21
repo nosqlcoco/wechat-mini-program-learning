@@ -24,5 +24,6 @@
 图片上传和长连接依赖后台接口,请参照另一个项目[springboot-weapp-demo](https://github.com/cocoli/springboot-weapp-demo)
 
 小程序交流群：295134058
+
 我的订阅号：
-![](screenshot/dingyuehao.JPG)
+![](https://github.com/cocoli/weixin_smallexe/blob/master/screenshot/dingyuhao.JPG?raw=true)
