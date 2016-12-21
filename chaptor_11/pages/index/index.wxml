@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="wrap-item">
+    <button type="primary" size="default" plain="{{false}}" bindtap="scanqr">扫码</button>
+    <contact-button type="default-light" size="20" session-from="weapp">客服消息</contact-button>
+  </view>
+</view>
