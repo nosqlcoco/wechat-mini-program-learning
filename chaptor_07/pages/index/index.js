@@ -48,5 +48,29 @@ Page({
             // complete
           }
         })
+    },
+    scancode: function(e){
+        wx.scanCode({
+          success: function(res){
+            console.log(res)
+            var result = res.result;
+            console.log(result)
+              var url = result.replace('wa://','').replace('http://','');
+              console.log(url)
+              wx.navigateTo({
+                url: url,
+                success: function(res){
+                  // success
+                }
+              })
+            
+          },
+          fail: function() {
+            // fail
+          },
+          complete: function() {
+            // complete
+          }
+        })
     }
 })

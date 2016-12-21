@@ -14,8 +14,8 @@
                     <view class="weui-search-bar__text">搜索</view>
                 </label>
             </view>
-            <!--<view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>-->
             <view class="weui-search-bar__cancel-btn" bindtap="search">搜索</view>
+            <view class="weui-search-bar__cancel-btn" bindtap="scancode">扫码</view>
         </view>
         <view class="weui-grids">
             <block wx:for-items="{{gridIcons}}" wx:key="{{index}}">

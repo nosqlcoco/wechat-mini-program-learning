@@ -39,13 +39,13 @@ Page({
   getColumnArticle: function(path){
     var that = this;
     httpclient.req(
-      '/wxclub' + path + '-' + that.data.pageIdx,
+      '/wxclub' + path + '/' + that.data.pageIdx,
       {
         apiName: 'WX_CLUB_ARTICLES',
       },
       'GET',
       function(res){
-        datalist = res.data.data || [];
+        var datalist = res.data.data || [];
         that.setData({articles: datalist})
         
         for(var i = 0; i < datalist.length; i++){
@@ -69,7 +69,7 @@ Page({
       },
       'GET',
       function(res){
-        datalist = res.data.data || [];
+        var datalist = res.data.data || [];
         that.setData({articles: datalist})
         
         for(var i = 0; i < datalist.length; i++){
