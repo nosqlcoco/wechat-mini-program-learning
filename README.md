@@ -1,4 +1,4 @@
-# weixin_smallexe
+# wechat-mini-program-learning
 微信小程序学习系列
 
 作者博客：[http://www.cnblogs.com/nosqlcoco](http://www.cnblogs.com/nosqlcoco)
